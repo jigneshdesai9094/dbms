@@ -1,0 +1,5 @@
+6.select sp.sno,sp.qty from p,sp where p.pno=sp.pno ORDER by p.weight desc LIMIT 1 
+7.select s.sname,sp.qty from s,p,sp where sp.pno=p.pno and p.color='Red' and s.sno=sp.sno  || select s.sname,sp.qty from s,p,sp where sp.pno=p.pno and p.color='Red' and s.sno=sp.sno GROUP BY sp.sno 
+8.select s.sname,p.p_city,sp.qty from s,p,sp where s.sno=sp.sno and s.s_status<30 and sp.pno=p.pno 
+9.select sno,sum(qty) from sp GROUP by sno 
+10.select pno,sum(qty) from sp GROUP BY pno
