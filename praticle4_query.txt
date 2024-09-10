@@ -1,0 +1,3 @@
+11.select p.pname,sum(sp.qty) from p,sp where p.pno=sp.pno group by p.pname;
+12.select sp.sno,s.sname,s.s_status,s.s_city,sum(sp.qty) from s,sp where s.sno=sp.sno and sp.sno<'s4' group by sp.sno;
+13.select s.sno,s.sname,s.s_status,s.s_city,sum(sp.qty) from s,sp where s.sno=sp.sno and s.s_status=20 group by sp.sno;
