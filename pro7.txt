@@ -1,0 +1,10 @@
+7=>
+  1.select dept.dept_name,max(emp.emp_salary) FROM dept,emp where dept.dept_id=emp.emp_dept_id GROUP BY dept.dept_id;
+  2.select dept.dept_name,COUNT(dept.dept_id) FROM dept,emp where dept.dept_id=emp.emp_dept_id GROUP BY dept.dept_id;
+
+8=>
+CREATE table account
+(
+    acc_no int,
+    amount decimal(10,2)
+);
