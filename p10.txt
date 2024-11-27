@@ -1,0 +1,8 @@
+set @sum=0;
+set @deposits=0;
+set @withdrawals=0;
+CREATE TRIGGER ins_transation BEFORE INSERT on account FOR EACH ROW PRECEDES ins_sum set @deposits = @deposits +IF(NEW.amount>0,NEW.amount,0),
+@withdrawals = @withdrawals + IF(NEW.amount<0,-NEW.amount,0);
+
+INSERT INTO account VALUES(137,1400.00),(138,2000.00),(139,-1000.00);
+SELECT @deposits as "Deposit amt",@withdrawals as "withdrawal amt",@sum as "total amt";
